@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node build/index.js",
+    "dev": "tsc-watch --onSuccess \"npm start\""
+  },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/jsonwebtoken": "^9.0.2",
