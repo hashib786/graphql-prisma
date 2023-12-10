@@ -7,8 +7,16 @@ import { expressMiddleware } from "@apollo/server/express4";
   app.use(express.json());
 
   const server = new ApolloServer({
-    typeDefs: "",
-    resolvers: {},
+    typeDefs: `
+        type Query {
+            hello : String
+        }
+    `,
+    resolvers: {
+      Query: {
+        hello: () => "Hey Hashib",
+      },
+    },
   });
   await server.start();
   const PORT = Number(process.env.PORT) || 8000;
